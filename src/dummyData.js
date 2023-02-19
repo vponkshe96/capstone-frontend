@@ -94,3 +94,20 @@ export const subscriberRows = [
     paymentAmount: "$120.00",
   },
 ];
+
+export const subscriptionRows = [
+  {
+    id: 1,
+    name: "1 year",
+    price: "$1,000",
+    cost: "$500",
+    activeSubscribers: "55",
+  },
+  {
+    id: 2,
+    name: "Lifetime",
+    price: "$10,000",
+    cost: "$5000",
+    activeSubscribers: "55",
+  },
+];

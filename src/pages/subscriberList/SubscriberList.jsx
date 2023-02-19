@@ -15,17 +15,17 @@ const columns = [
     //col value
     headerName: "ID",
     //col title
-    width: 90,
+    flex: 1,
   },
   {
     field: "fullName",
     headerName: "Full Name",
-    width: 150,
+    flex: 1,
     //COMMENT out for now
     //method used when this is a special column ie. not just fetching a value from rows, but a combo of values/styling/inserting custom value
     // renderCell: (params) => {
     //   return (
-    //     <div className="subscriberListTablesubscriber">
+    //     <div c lassName="subscriberListTablesubscriber">
     //       <img src={params.row.avatar} alt="" className="subscriberListTableImg" />
     //       {params.row.subscribername}
     //     </div>
@@ -36,28 +36,27 @@ const columns = [
   {
     field: "email",
     headerName: "Email",
-    width: 200,
+    flex: 1,
   },
   {
     field: "date",
     headerName: "Date",
-    width: 120,
+    flex: 1,
   },
   {
     field: "subscriptionType",
     headerName: "Subscription Type",
-    width: 150,
+    flex: 1,
   },
   {
     field: "paymentAmount",
     headerName: "Payment Amount",
-    width: 120,
+    flex: 1,
   },
   {
     field: "action",
     headerName: "Action",
-    width: 120,
-
+    flex: 1,
     renderCell: (params) => {
       return (
         <>

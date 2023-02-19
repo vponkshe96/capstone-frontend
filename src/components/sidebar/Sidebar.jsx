@@ -52,6 +52,27 @@ const Sidebar = () => {
             </Link>
           </ul>
         </div>
+        <div className="sidebarMenu">
+          <h3 className="sidebarTitle">Subscriptions</h3>
+          <ul className="sidebarList">
+            <Link className="link" to="/newSubscriber">
+              <li className="sidebarListItem">
+                <AddCircleOutlineOutlined className="sidebarIcon" />
+                Create
+              </li>
+            </Link>
+            <Link
+              className="link"
+              to="/subscriptions
+            "
+            >
+              <li className="sidebarListItem">
+                <Visibility className="sidebarIcon" />
+                View
+              </li>
+            </Link>
+          </ul>
+        </div>
         {/* <div className="sidebarMenu">
           <h3 className="sidebarTitle">Notifications</h3>
           <ul className="sidebarList">
