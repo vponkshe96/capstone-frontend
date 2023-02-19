@@ -1,36 +1,36 @@
-.user {
+.subscriber {
   flex: 4;
   padding: 20px;
 }
 
-.userTitleContainer {
+.subscriberTitleContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.userTitle {
+.subscriberTitle {
   font-size: 22px;
   font-weight: 600;
 }
 
-/* .userAddButton {
+/* .subscriberAddButton {
   border: none;
   border-radius: 5px;
   width: 80px;
   padding: 5px;
   /* height gets automatically adjusted */
-  /* background-color: teal;
+/* background-color: teal;
   color: white;
   font-size: 16px;
-} */ 
+} */
 
-.userContainer {
+.subscriberContainer {
   margin-top: 20px;
   display: flex;
 }
 
-.userDisplay {
+.subscriberDisplay {
   -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   padding: 20px;
@@ -38,110 +38,110 @@
   margin-right: 20px;
 }
 
-.userUpdate {
+.subscriberUpdate {
   -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   padding: 20px;
   flex: 2;
 }
 
-/* User Display CSS */
-.userDisplayTop {
+/* subscriber Display CSS */
+.subscriberDisplayTop {
   display: flex;
   align-items: center;
 }
 
-.userDisplayImg {
+.subscriberDisplayImg {
   height: 40px;
   width: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.userDisplayTopTitle {
+.subscriberDisplayTopTitle {
   display: flex;
   flex-direction: column;
   margin-left: 20px;
 }
 
-.userDisplayUsername {
+.subscriberDisplaysubscribername {
   font-weight: 600;
 }
 
-.userDisplayUserTitle {
+.subscriberDisplaysubscriberTitle {
   font-weight: 300;
 }
 
-.userDisplayBottom {
+.subscriberDisplayBottom {
   margin-top: 20px;
 }
 
-.userDisplayTitle {
+.subscriberDisplayTitle {
   font-size: 14px;
   font-weight: 600;
   color: rgb(175, 170, 170);
 }
 
-.userDisplayInfo {
+.subscriberDisplayInfo {
   display: flex;
   align-items: center;
   margin: 20px 0px;
   color: #444;
 }
 
-.userDisplayIcon {
+.subscriberDisplayIcon {
   font-size: 16px !important;
 }
 
-.userDisplayInfoTitle {
+.subscriberDisplayInfoTitle {
   margin-left: 20px;
 }
 
-/* User Update CSS */
-.userUpdateTitle {
+/* subscriber Update CSS */
+.subscriberUpdateTitle {
   font-size: 24px;
   font-weight: 600;
 }
 
-.userUpdateForm {
+.subscriberUpdateForm {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
-.userUpdateItem {
+.subscriberUpdateItem {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
 }
 /* 
 targetting label */
-.userUpdateItem > label {
+.subscriberUpdateItem > label {
   margin-bottom: 5px;
   font-size: 14px;
 }
 
 /* 
 targetting input */
-.userUpdateInput {
+.subscriberUpdateInput {
   width: 250px;
   height: 30px;
   border: none;
   border-bottom: 1px solid gray;
 }
 
-.userUpdateRight {
+.subscriberUpdateRight {
   margin-left: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.userUpdateUpload {
+.subscriberUpdateUpload {
   display: flex;
   align-items: center;
 }
 
-.userUpdateImg {
+.subscriberUpdateImg {
   height: 100px;
   width: 100px;
   border-radius: 10px;
@@ -149,11 +149,11 @@ targetting input */
   margin-right: 20px;
 }
 
-.userUpdateIcon {
+.subscriberUpdateIcon {
   cursor: pointer;
 }
 
-.userUpdateButton {
+.subscriberUpdateButton {
   border: none;
   border-radius: 5px;
   padding: 5px;

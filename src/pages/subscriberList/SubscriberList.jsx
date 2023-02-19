@@ -1,7 +1,7 @@
-import "./userList.css";
+import "./subscriberList.css";
 import { DataGrid } from "@mui/x-data-grid";
 import { DeleteOutline } from "@mui/icons-material";
-import { userRows } from "../../dummyData";
+import { subscriberRows } from "../../dummyData";
 import { Link } from "react-router-dom";
 
 // Using DataGrid component from mui
@@ -25,9 +25,9 @@ const columns = [
     //method used when this is a special column ie. not just fetching a value from rows, but a combo of values/styling/inserting custom value
     // renderCell: (params) => {
     //   return (
-    //     <div className="userListTableUser">
-    //       <img src={params.row.avatar} alt="" className="userListTableImg" />
-    //       {params.row.username}
+    //     <div className="subscriberListTablesubscriber">
+    //       <img src={params.row.avatar} alt="" className="subscriberListTableImg" />
+    //       {params.row.subscribername}
     //     </div>
     //   );
     // },
@@ -61,25 +61,25 @@ const columns = [
     renderCell: (params) => {
       return (
         <>
-          {/* relative path to individual user */}
+          {/* relative path to individual subscriber */}
           <Link to={`${params.row.id}`}>
-            <button className="userListTableEdit">Edit</button>
+            <button className="subscriberListTableEdit">Edit</button>
           </Link>
           {/* AXIOS DELETE REQUEST HERE*/}
-          <DeleteOutline className="userListTableDelete" />
+          <DeleteOutline className="subscriberListTableDelete" />
         </>
       );
     },
   },
 ];
 
-const UserList = () => {
+const SubscriberList = () => {
   return (
-    <div className="userList">
-      <h3 className="userListTitle">Users</h3>
+    <div className="subscriberList">
+      <h3 className="subscriberListTitle">Subscribers</h3>
       <DataGrid
-        className="userListTable"
-        rows={userRows}
+        className="subscriberListTable"
+        rows={subscriberRows}
         columns={columns}
         pageSize={10}
         //need it to set page size
@@ -92,4 +92,4 @@ const UserList = () => {
     </div>
   );
 };
-export default UserList;
+export default SubscriberList;

@@ -31,21 +31,18 @@ const NewSubscriber = () => {
       subscriber
     );
 
-    if (response.status === 400) {
-      console.log("error!");
-    }
     if (response.status === 200) {
-      alert("New meeting has been successfully ADDED!");
+      alert("New subscriber has been successfully ADDED!");
       //prevent page refresh
       //NOT EXACTLY sure, something related to not having to refresh page to view latest data
       window.location.reload(false);
     }
     //RESETTING FORM after submission
-    // setFullName("");
-    // setEmail("");
-    // setDate("");
-    // setSubscriptionType("");
-    // setPaymentAmount("");
+    setFullName("");
+    setEmail("");
+    setDate("");
+    setSubscriptionType("");
+    setPaymentAmount("");
   };
 
   return (

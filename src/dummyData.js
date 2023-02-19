@@ -49,7 +49,7 @@ export const userData = [
   },
 ];
 
-export const userRows = [
+export const subscriberRows = [
   {
     id: 1,
     fullName: "Jon Snow",

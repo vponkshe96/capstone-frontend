@@ -32,7 +32,7 @@ const Sidebar = () => {
           </ul>
         </div>
         <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Users</h3>
+          <h3 className="sidebarTitle">Subscribers</h3>
           <ul className="sidebarList">
             <Link className="link" to="newSubscriber">
               <li className="sidebarListItem">
@@ -42,7 +42,7 @@ const Sidebar = () => {
             </Link>
             <Link
               className="link"
-              to="/users
+              to="/subscribers
             "
             >
               <li className="sidebarListItem">
