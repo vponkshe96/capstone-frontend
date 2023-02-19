@@ -1,0 +1,52 @@
+.keyInfo {
+  display: flex;
+  justify-content: space-between;
+  /* EXTREMELY IMPORTANT - omitting this caused problems earlier */
+  flex-wrap: wrap;
+}
+
+.keyInfoItem {
+  flex: 1;
+  margin: 10px 20px;
+  border-radius: 10px;
+  padding: 30px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.keyInfoTitle {
+  font-size: 20px;
+}
+.keyInfoMoneyContainer {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.keyInfoMoney {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.keyInfoMoneyRate {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.keyInfoIcon {
+  font-size: 14px;
+  margin-left: 10px;
+  margin-right: 5px;
+  color: green;
+}
+
+.keyInfoIcon.negative {
+  color: red;
+}
+
+.keyInfoComp {
+  color: gray;
+  font-size: 15px;
+}

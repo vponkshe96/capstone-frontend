@@ -1,0 +1,70 @@
+.newUser {
+  flex: 4;
+}
+
+.newUserTitle {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 15px;
+  color: #2196f3;
+}
+
+.newUserForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.newUserItem {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.newUserItem > label {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: gray;
+}
+
+.newUserItem > input {
+  height: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.newUserSelect {
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.newUserButton {
+  height: 40px;
+  width: 120px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 20px;
+  background-color: #2196f3;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.newUserIcon {
+  font-size: 20px !important;
+  margin-right: 2px;
+}

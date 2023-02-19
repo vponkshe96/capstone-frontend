@@ -1,0 +1,59 @@
+.userList {
+  flex: 4;
+}
+
+.userListTitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 20px;
+  color: black;
+}
+
+.userListTable {
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  margin: 20px;
+}
+
+/* NOT sure why I put this */
+/* .userListTableUser {
+  display: flex;
+  align-items: center;
+} */
+
+.userListTableImg {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.userListTableEdit {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #3bb077;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.userListTableDelete {
+  color: red;
+  cursor: pointer;
+}
+
+/* ADD LATER */
+.widgetLgButton.Approved {
+  background-color: #e5faf2;
+  color: #3bb077;
+}
+.widgetLgButton.Declined {
+  background-color: #fff0f1;
+  color: #d95087;
+}
+.widgetLgButton.Pending {
+  background-color: #ebf1fe;
+  color: #2a7ade;
+}
