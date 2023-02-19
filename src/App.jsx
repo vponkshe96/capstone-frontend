@@ -4,8 +4,8 @@ import Topbar from "./components/topbar/Topbar";
 import Home from "./pages/home/Home";
 import UserList from "./pages/userList/UserList";
 import User from "./pages/user/User";
-import NewUser from "./pages/newUser/NewUser";
 import "./app.css";
+import NewSubscriber from "./pages/newSubscriber/NewSubscriber";
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/users" element={<UserList />} />
             <Route path="/users/:userId" element={<User />} />
-            <Route path="/newUser" element={<NewUser />} />
+            <Route path="/newSubscriber" element={<NewSubscriber />} />
           </Routes>
         </div>
       </div>

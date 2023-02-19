@@ -1,9 +1,9 @@
-import "./newUser.css";
+import "./newSubscriber.css";
 import { Add } from "@mui/icons-material";
 import { useState } from "react";
 import axios from "axios";
 
-const NewUser = () => {
+const NewSubscriber = () => {
   //REFACTOR by having only one on change function
   //ADD required fields
 
@@ -16,35 +16,43 @@ const NewUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     //shorthand object notation
-    const client = { fullName, date, email, subscriptionType, paymentAmount };
-    console.log(client);
+    const subscriber = {
+      fullName,
+      date,
+      email,
+      subscriptionType,
+      paymentAmount,
+    };
+    console.log(subscriber);
     //Sending post request to backend express server, receive and store response
 
     const response = await axios.post(
       "http://localhost:8080/clients/addClient",
-      client
-    )
+      subscriber
+    );
+
+    if (response.status === 400) {
+      console.log("error!");
+    }
     if (response.status === 200) {
       alert("New meeting has been successfully ADDED!");
       //prevent page refresh
       //NOT EXACTLY sure, something related to not having to refresh page to view latest data
       window.location.reload(false);
-    } else {
-      console.log(response.data.error);
     }
     //RESETTING FORM after submission
-    setFullName("");
-    setEmail("");
-    setDate("");
-    setSubscriptionType("");
-    setPaymentAmount("");
+    // setFullName("");
+    // setEmail("");
+    // setDate("");
+    // setSubscriptionType("");
+    // setPaymentAmount("");
   };
 
   return (
-    <div className="newUser">
-      <h1 className="newUserTitle">New User</h1>
-      <form className="newUserForm" onSubmit={handleSubmit}>
-        <div className="newUserItem">
+    <div className="newSubscriber">
+      <h1 className="newSubscriberTitle">New Subscriber</h1>
+      <form className="newSubscriberForm" onSubmit={handleSubmit}>
+        <div className="newSubscriberItem">
           <label>Full Name</label>
           {/* Need value prop for resetting the input fields */}
           <input
@@ -54,7 +62,7 @@ const NewUser = () => {
             onChange={(e) => setFullName(e.target.value)}
           />
         </div>
-        <div className="newUserItem">
+        <div className="newSubscriberItem">
           <label>Email</label>
           <input
             type="text"
@@ -63,7 +71,7 @@ const NewUser = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="newUserItem">
+        <div className="newSubscriberItem">
           <label>Date</label>
           <input
             type="date"
@@ -71,11 +79,11 @@ const NewUser = () => {
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
-        <div className="newUserItem">
+        <div className="newSubscriberItem">
           {/* Deleted htmlFor att in label and id in select Felt it was redundant*/}
           <label>Subscription Type</label>
           <select
-            className="newUserSelect"
+            className="newSubscriberSelect"
             value={subscriptionType}
             onChange={(e) => setSubscriptionType(e.target.value)}
           >
@@ -83,10 +91,10 @@ const NewUser = () => {
             <option>Lifetime</option>
           </select>
         </div>
-        <div className="newUserItem">
+        <div className="newSubscriberItem">
           <label>Payment Amount (in US$)</label>
           <select
-            className="newUserSelect"
+            className="newSubscriberSelect"
             value={paymentAmount}
             onChange={(e) => setPaymentAmount(e.target.value)}
           >
@@ -94,12 +102,12 @@ const NewUser = () => {
             <option>10,000</option>
           </select>
         </div>
-        <button className="newUserButton">
-          <Add className="newUserIcon" />
+        <button className="newSubscriberButton">
+          <Add className="newSubscriberIcon" />
           Create
         </button>
       </form>
     </div>
   );
 };
-export default NewUser;
+export default NewSubscriber;

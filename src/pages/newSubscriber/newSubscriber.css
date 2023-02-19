@@ -1,15 +1,15 @@
-.newUser {
+.newSubscriber {
   flex: 4;
 }
 
-.newUserTitle {
+.newSubscriberTitle {
   font-size: 26px;
   font-weight: 600;
   margin: 15px;
   color: #2196f3;
 }
 
-.newUserForm {
+.newSubscriberForm {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,21 +18,21 @@
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
 
-.newUserItem {
+.newSubscriberItem {
   width: 500px;
   display: flex;
   flex-direction: column;
   margin: 20px;
 }
 
-.newUserItem > label {
+.newSubscriberItem > label {
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: 600;
   color: gray;
 }
 
-.newUserItem > input {
+.newSubscriberItem > input {
   height: 20px;
   padding: 10px;
   font-size: 16px;
@@ -40,7 +40,7 @@
   border-radius: 5px;
 }
 
-.newUserSelect {
+.newSubscriberSelect {
   height: 40px;
   padding: 10px;
   font-size: 16px;
@@ -48,7 +48,7 @@
   border-radius: 5px;
 }
 
-.newUserButton {
+.newSubscriberButton {
   height: 40px;
   width: 120px;
   border: none;
@@ -64,7 +64,7 @@
   cursor: pointer;
 }
 
-.newUserIcon {
+.newSubscriberUIcon {
   font-size: 20px !important;
   margin-right: 2px;
 }
