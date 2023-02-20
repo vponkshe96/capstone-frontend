@@ -16,7 +16,7 @@ const Subscriber = () => {
       </div>
       <div className="subscriberContainer">
         <div className="subscriberDisplay">
-          <div className="subscriberDisplayTop">
+          {/* <div className="subscriberDisplayTop">
             <img
               src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
               alt=""
@@ -30,20 +30,21 @@ const Subscriber = () => {
                 Software Engineer
               </span>
             </div>
-          </div>
+          </div> */}
           <div className="subscriberDisplayBottom">
-            <span className="subscriberDisplayTitle">Account Details</span>
+            <span className="subscriberDisplayTitle">Contact Details</span>
             <div className="subscriberDisplayInfo">
               <PermIdentity className="subscriberDisplayIcon" />
               <span className="subscriberDisplayInfoTitle">Anna Becker</span>
             </div>
             <div className="subscriberDisplayInfo">
-              <CalendarToday className="subscriberDisplayIcon" />
+              {/* <CalendarToday className="subscriberDisplayIcon" /> */}
+              <MailOutline className="subscriberDisplayIcon" />
               <span className="subscriberDisplayInfoTitle">
                 annabecker@gmail.com
               </span>
             </div>
-            <span className="subscriberDisplayTitle">Contact Details</span>
+            <span className="subscriberDisplayTitle">Account Details</span>
             <div className="subscriberDisplayInfo">
               <PhoneAndroid className="subscriberDisplayIcon" />
               <span className="subscriberDisplayInfoTitle">+1 123 456 67</span>
