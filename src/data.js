@@ -59,7 +59,6 @@ export const subscriberRows = [
     email: "jon@gmail.com",
     date: "24/02/2022",
     subscriptionType: "Basic",
-    paymentAmount: "$120.00",
   },
   {
     id: 2,
@@ -67,7 +66,6 @@ export const subscriberRows = [
     email: "jon@gmail.com",
     date: "24/02/2022",
     subscriptionType: "Basic",
-    paymentAmount: "$120.00",
   },
   {
     id: 3,
@@ -75,7 +73,6 @@ export const subscriberRows = [
     email: "jon@gmail.com",
     date: "24/02/2022",
     subscriptionType: "Basic",
-    paymentAmount: "$120.00",
   },
   {
     id: 4,
@@ -83,7 +80,6 @@ export const subscriberRows = [
     email: "jon@gmail.com",
     date: "24/02/2022",
     subscriptionType: "Basic",
-    paymentAmount: "$120.00",
   },
   {
     id: 5,
@@ -91,7 +87,6 @@ export const subscriberRows = [
     email: "jon@gmail.com",
     date: "24/02/2022",
     subscriptionType: "Basic",
-    paymentAmount: "$120.00",
   },
 ];
 

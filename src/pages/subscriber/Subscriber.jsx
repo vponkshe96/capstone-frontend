@@ -15,9 +15,9 @@ const Subscriber = () => {
   //GET REQUEST to types model
   useEffect(() => {
     const fetchTypes = async () => {
-      const rawResponse = await axios.get("");
+      const response = await axios.get("");
       //receive in json format coz that's the format the backend sends us the data, array of objects
-      const response = rawResponse.data;
+      const { data } = response;
       setSubscriptionType(response);
     };
     fetchTypes();
@@ -34,14 +34,10 @@ const Subscriber = () => {
     };
     console.log(subscriber);
 
-    // const response = await axios.put("", subscriber);
-
-    // if (response.status === 200) {
-    //   alert("Subscriber has been successfully edited!");
-    //   //prevent page refresh
-    //   //NOT EXACTLY sure, something related to not having to refresh page to view latest data
-    //   window.location.reload(false);
-    // }
+    const response = await axios.put("", subscriber);
+    if (response.status === 200) {
+      alert("Subscriber has been successfully edited!");
+    }
     //RESETTING FORM after submission
     setFullName("");
     setEmail("");

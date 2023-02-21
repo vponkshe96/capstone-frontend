@@ -22,7 +22,7 @@ const NewSubscription = () => {
     const response = await axios.post("", subscription);
 
     if (response.status === 200) {
-      alert("New subscription has been successfully ADDED!");
+      alert("New subscription has been successfully added!");
     }
 
     //RESETTING FORM after submission

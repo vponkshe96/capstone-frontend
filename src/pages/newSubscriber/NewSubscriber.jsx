@@ -15,9 +15,9 @@ const NewSubscriber = () => {
   //GET REQUEST to types model
   useEffect(() => {
     const fetchTypes = async () => {
-      const rawResponse = await axios.get("");
+      const response = await axios.get("");
       //receive in json format coz that's the format the backend sends us the data, array of objects
-      const response = rawResponse.data;
+      const { data } = response;
       setSubscriptionType(response);
     };
     fetchTypes();
@@ -35,13 +35,10 @@ const NewSubscriber = () => {
     console.log(subscriber);
     //Sending post request to backend express server, receive and store response
 
-    const response = await axios.post(
-      "http://localhost:8080/clients/addClient",
-      subscriber
-    );
+    const response = await axios.post("", subscriber);
 
     if (response.status === 200) {
-      alert("New subscriber has been successfully ADDED!");
+      alert("New subscriber has been successfully added!");
       //prevent page refresh
       //NOT EXACTLY sure, something related to not having to refresh page to view latest data
       window.location.reload(false);
@@ -92,6 +89,9 @@ const NewSubscriber = () => {
             value={subscriptionType}
             onChange={(e) => setSubscriptionType(e.target.value)}
           >
+            <option value="" selected disabled hidden>
+              Choose here
+            </option>
             <option>1-Time</option>
             <option>Lifetime</option>
           </select>

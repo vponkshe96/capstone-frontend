@@ -4,7 +4,7 @@
 import "./subscriptionList.css";
 import { DataGrid } from "@mui/x-data-grid";
 import { DeleteOutline } from "@mui/icons-material";
-import { subscriptionRows } from "../../dummyData";
+import { subscriptionRows } from "../../data";
 import { Link } from "react-router-dom";
 
 const columns = [
@@ -60,6 +60,7 @@ const SubscriptionList = () => {
       <h3 className="subscriptionListTitle">Subscriptions</h3>
       <DataGrid
         className="subscriptionListTable"
+        autoHeight
         rows={subscriptionRows}
         columns={columns}
         pageSize={10}
