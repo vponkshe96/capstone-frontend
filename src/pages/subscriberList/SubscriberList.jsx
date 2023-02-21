@@ -1,3 +1,6 @@
+// Objective
+// GET REQUEST to subscribers model
+//DELETE REQUEST to subscribers model
 import "./subscriberList.css";
 import { DataGrid } from "@mui/x-data-grid";
 import { DeleteOutline } from "@mui/icons-material";
@@ -48,11 +51,11 @@ const columns = [
     headerName: "Subscription Type",
     flex: 1,
   },
-  {
-    field: "paymentAmount",
-    headerName: "Payment Amount",
-    flex: 1,
-  },
+  // {
+  //   field: "paymentAmount",
+  //   headerName: "Payment Amount",
+  //   flex: 1,
+  // },
   {
     field: "action",
     headerName: "Action",

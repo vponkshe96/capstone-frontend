@@ -1,3 +1,6 @@
+// Objective
+// GET REQUEST to subscribers model
+//DELETE REQUEST to subscribers model
 import "./subscriptionList.css";
 import { DataGrid } from "@mui/x-data-grid";
 import { DeleteOutline } from "@mui/icons-material";
@@ -28,7 +31,7 @@ const columns = [
   },
   {
     field: "activeSubscribers",
-    headerName: "Active Subscribers",
+    headerName: "Subscribers",
     flex: 1,
   },
   {

@@ -1,164 +1,70 @@
 .subscriber {
   flex: 4;
-  padding: 20px;
-}
-
-.subscriberTitleContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .subscriberTitle {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 600;
+  margin: 15px;
+  color: #2196f3;
 }
 
-/* .subscriberAddButton {
-  border: none;
-  border-radius: 5px;
-  width: 80px;
-  padding: 5px;
-  /* height gets automatically adjusted */
-/* background-color: teal;
-  color: white;
+.subscriberForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.subscriberItem {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.subscriberItem > label {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: gray;
+}
+
+.subscriberItem > input {
+  height: 20px;
+  padding: 10px;
   font-size: 16px;
-} */
-
-.subscriberContainer {
-  margin-top: 20px;
-  display: flex;
-}
-
-.subscriberDisplay {
-  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-  padding: 20px;
-  flex: 1;
-  margin-right: 20px;
-}
-
-.subscriberUpdate {
-  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-  padding: 20px;
-  flex: 2;
-}
-
-/* subscriber Display CSS */
-.subscriberDisplayTop {
-  display: flex;
-  align-items: center;
-}
-
-.subscriberDisplayImg {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.subscriberDisplayTopTitle {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-}
-
-.subscriberDisplaysubscribername {
-  font-weight: 600;
-}
-
-.subscriberDisplaysubscriberTitle {
-  font-weight: 300;
-}
-
-.subscriberDisplayBottom {
-  margin-top: 20px;
-}
-
-.subscriberDisplayTitle {
-  font-size: 14px;
-  font-weight: 600;
-  color: rgb(175, 170, 170);
-}
-
-.subscriberDisplayInfo {
-  display: flex;
-  align-items: center;
-  margin: 20px 0px;
-  color: #444;
-}
-
-.subscriberDisplayIcon {
-  font-size: 16px !important;
-}
-
-.subscriberDisplayInfoTitle {
-  margin-left: 20px;
-}
-
-/* subscriber Update CSS */
-.subscriberUpdateTitle {
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.subscriberUpdateForm {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-.subscriberUpdateItem {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-}
-/* 
-targetting label */
-.subscriberUpdateItem > label {
-  margin-bottom: 5px;
-  font-size: 14px;
-}
-
-/* 
-targetting input */
-.subscriberUpdateInput {
-  width: 250px;
-  height: 30px;
-  border: none;
-  border-bottom: 1px solid gray;
-}
-
-.subscriberUpdateRight {
-  margin-left: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.subscriberUpdateUpload {
-  display: flex;
-  align-items: center;
-}
-
-.subscriberUpdateImg {
-  height: 100px;
-  width: 100px;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-right: 20px;
-}
-
-.subscriberUpdateIcon {
-  cursor: pointer;
-}
-
-.subscriberUpdateButton {
-  border: none;
+  border: 1px solid gray;
   border-radius: 5px;
-  padding: 5px;
-  cursor: pointer;
-  background-color: darkblue;
+}
+
+.subscriberSelect {
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.subscriberButton {
+  height: 40px;
+  width: 120px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 20px;
+  background-color: #2196f3;
   color: white;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.subscriberIcon {
+  font-size: 20px !important;
+  margin-right: 5px;
 }

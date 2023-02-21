@@ -1,51 +1,51 @@
-export const userData = [
+export const subscriberData = [
   {
     month: "Jan",
-    "Active User": 4000,
+    Subscribers: 4000,
   },
   {
     month: "Feb",
-    "Active User": 5500,
+    Subscribers: 5500,
   },
   {
     month: "Mar",
-    "Active User": 4700,
+    Subscribers: 4700,
   },
   {
     month: "Apr",
-    "Active User": 7000,
+    Subscribers: 7000,
   },
   {
     month: "May",
-    "Active User": 10000,
+    Subscribers: 10000,
   },
   {
     month: "June",
-    "Active User": 6500,
+    Subscribers: 6500,
   },
   {
     month: "July",
-    "Active User": 4000,
+    Subscribers: 4000,
   },
   {
     month: "Aug",
-    "Active User": 11000,
+    Subscribers: 11000,
   },
   {
     month: "Sep",
-    "Active User": 15000,
+    Subscribers: 15000,
   },
   {
     month: "Oct",
-    "Active User": 8000,
+    Subscribers: 8000,
   },
   {
     month: "Nov",
-    "Active User": 9500,
+    Subscribers: 9500,
   },
   {
     month: "Dec",
-    "Active User": 6000,
+    Subscribers: 6000,
   },
 ];
 
@@ -58,7 +58,7 @@ export const subscriberRows = [
     //   "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "jon@gmail.com",
     date: "24/02/2022",
-    subscriptionType: "1 year",
+    subscriptionType: "Basic",
     paymentAmount: "$120.00",
   },
   {
@@ -66,7 +66,7 @@ export const subscriberRows = [
     fullName: "Jon Snow",
     email: "jon@gmail.com",
     date: "24/02/2022",
-    subscriptionType: "1 year",
+    subscriptionType: "Basic",
     paymentAmount: "$120.00",
   },
   {
@@ -74,7 +74,7 @@ export const subscriberRows = [
     fullName: "Jon Snow",
     email: "jon@gmail.com",
     date: "24/02/2022",
-    subscriptionType: "1 year",
+    subscriptionType: "Basic",
     paymentAmount: "$120.00",
   },
   {
@@ -82,7 +82,7 @@ export const subscriberRows = [
     fullName: "Jon Snow",
     email: "jon@gmail.com",
     date: "24/02/2022",
-    subscriptionType: "1 year",
+    subscriptionType: "Basic",
     paymentAmount: "$120.00",
   },
   {
@@ -90,7 +90,7 @@ export const subscriberRows = [
     fullName: "Jon Snow",
     email: "jon@gmail.com",
     date: "24/02/2022",
-    subscriptionType: "1 year",
+    subscriptionType: "Basic",
     paymentAmount: "$120.00",
   },
 ];
@@ -98,14 +98,14 @@ export const subscriberRows = [
 export const subscriptionRows = [
   {
     id: 1,
-    name: "1 year",
+    name: "Basic",
     price: "$1,000",
     cost: "$500",
     activeSubscribers: "55",
   },
   {
     id: 2,
-    name: "Lifetime",
+    name: "Premium",
     price: "$10,000",
     cost: "$5000",
     activeSubscribers: "55",

@@ -1,17 +1,27 @@
+// Objective:
+//Send GET REQUEST to types model
+//Send POST REQUEST to subscribers model
 import "./newSubscriber.css";
 import { Add } from "@mui/icons-material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const NewSubscriber = () => {
-  //REFACTOR by having only one on change function
-  //ADD required fields
-
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
   const [subscriptionType, setSubscriptionType] = useState("");
-  const [paymentAmount, setPaymentAmount] = useState("");
+
+  //GET REQUEST to types model
+  useEffect(() => {
+    const fetchTypes = async () => {
+      const rawResponse = await axios.get("");
+      //receive in json format coz that's the format the backend sends us the data, array of objects
+      const response = rawResponse.data;
+      setSubscriptionType(response);
+    };
+    fetchTypes();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +31,6 @@ const NewSubscriber = () => {
       date,
       email,
       subscriptionType,
-      paymentAmount,
     };
     console.log(subscriber);
     //Sending post request to backend express server, receive and store response
@@ -42,7 +51,6 @@ const NewSubscriber = () => {
     setEmail("");
     setDate("");
     setSubscriptionType("");
-    setPaymentAmount("");
   };
 
   return (
@@ -86,17 +94,6 @@ const NewSubscriber = () => {
           >
             <option>1-Time</option>
             <option>Lifetime</option>
-          </select>
-        </div>
-        <div className="newSubscriberItem">
-          <label>Payment Amount (in US$)</label>
-          <select
-            className="newSubscriberSelect"
-            value={paymentAmount}
-            onChange={(e) => setPaymentAmount(e.target.value)}
-          >
-            <option>1,000</option>
-            <option>10,000</option>
           </select>
         </div>
         <button className="newSubscriberButton">
