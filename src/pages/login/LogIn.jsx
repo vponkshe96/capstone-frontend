@@ -8,9 +8,7 @@ const LogIn = () => {
   const [password, setPassword] = useState("");
   return (
     <div className="logIn">
-      <h1 className="logInTitle">
-        Welcome to Dashboard: Enter your details to login!
-      </h1>
+      <h1 className="logInTitle">Enter your details to login</h1>
       <form className="logInForm">
         <div className="logInItem">
           <label>Username</label>

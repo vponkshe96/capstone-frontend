@@ -31,7 +31,7 @@ const Register = () => {
       //save JWT in local storage
       localStorage.setItem("token", data);
       //move user to login page via useNavigate hook
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.log(error);
       if (error.response && error.response.status === 400) {
@@ -43,7 +43,7 @@ const Register = () => {
   return (
     <div className="register">
       <h1 className="registerTitle">
-        Welcome to Dashboard: Enter your details to register!
+        Enter your details to register
       </h1>
       <form className="registerForm" onSubmit={handleSubmit}>
         <div className="registerItem">
@@ -52,6 +52,7 @@ const Register = () => {
           <input
             type="text"
             placeholder="john123"
+            required
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -61,14 +62,16 @@ const Register = () => {
           <input
             type="email"
             placeholder="johnsmith@gmail.com"
+            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </div>
+        </div> 
         <div className="registerItem">
           <label>Password</label>
           <input
             type="password"
+            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

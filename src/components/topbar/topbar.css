@@ -22,9 +22,14 @@
   color: darkblue;
   cursor: pointer;
 }
+.topLeft {
+  flex: 10;
+}
 
 .topRight {
   display: flex;
+  flex: 1;
+  justify-content: space-between;
 }
 
 .icon {

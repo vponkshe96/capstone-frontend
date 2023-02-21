@@ -1,7 +1,5 @@
 import "./topbar.css";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import LanguageIcon from "@mui/icons-material/Language";
-import SettingsIcon from "@mui/icons-material/Settings";
+import { Link } from "react-router-dom";
 
 const Topbar = () => {
   return (
@@ -11,15 +9,8 @@ const Topbar = () => {
           <span className="logo">Dashboard</span>
         </div>
         <div className="topRight">
-          <span className="icon">
-            <NotificationsNoneIcon />
-          </span>
-          <span className="icon">
-            <LanguageIcon />
-          </span>
-          <span className="icon">
-            <SettingsIcon />
-          </span>
+          {/* <Link to="/">Register</Link>
+          <Link to="/login">Login</Link> */}
         </div>
       </div>
     </div>

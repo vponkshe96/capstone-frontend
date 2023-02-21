@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home/Home";
 import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
 import Business from "./pages/business/Business";
@@ -21,9 +22,10 @@ const App = () => {
           {/* Setting up app routes */}
           <Routes>
             {/* NEW ROUTING */}
-            <Route path="/" element={<Register />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/login" element={<LogIn />} />
-            <Route path="/home" element={<NewSubscription />} />
+            <Route path="/newSubscription" element={<NewSubscription />} />
             <Route path="/business" element={<Business />} />
             <Route path="/subscribers" element={<SubscriberList />} />
             <Route path="/subscribers/:subscriberId" element={<Subscriber />} />
