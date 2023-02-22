@@ -1,6 +1,6 @@
 import "./sidebar.css";
 import {
-  Logout,
+  LineStyle,
   Timeline,
   TrendingUp,
   AddCircleOutlineOutlined,
@@ -68,23 +68,6 @@ const Sidebar = () => {
               <li className="sidebarListItem">
                 <TrendingUp className="sidebarIcon" />
                 Subscriptions
-              </li>
-            </Link>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">User</h3>
-          <ul className="sidebarList">
-            <Link
-              className="link"
-              onClick={() => {
-                localStorage.clear();
-              }}
-              to="/"
-            >
-              <li className="sidebarListItem">
-                <Logout className="sidebarIcon" />
-                Log Out
               </li>
             </Link>
           </ul>
