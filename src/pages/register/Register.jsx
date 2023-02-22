@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   //to catch any errors in the backend during user registration
@@ -16,7 +16,7 @@ const Register = () => {
     e.preventDefault();
     //shorthand object notation
     const user = {
-      username,
+      name,
       email,
       password,
     };
@@ -24,37 +24,39 @@ const Register = () => {
 
     //for handling scenario where user already exists
     try {
-      const response = await axios.post("", user);
+      const response = await axios.post(
+        "http://localhost:8080/users/signUp",
+        user
+      );
       console.log(response);
-      //response is a JSON object which will have JWT token in data property
+      //response is a JSON object which will have JWT token in token property of data property
       const { data } = response;
+      const { token } = data;
       //save JWT in local storage
-      localStorage.setItem("token", data);
+      localStorage.setItem("token", token);
       //move user to login page via useNavigate hook
-      navigate("/");
+      navigate("/newSubscription");
     } catch (error) {
       console.log(error);
       if (error.response && error.response.status === 400) {
-        setError(error.response.data);
+        setError("User already exists! Proceed to login");
       }
     }
   };
 
   return (
     <div className="register">
-      <h1 className="registerTitle">
-        Enter your details to register
-      </h1>
+      <h1 className="registerTitle">Enter your details to register</h1>
       <form className="registerForm" onSubmit={handleSubmit}>
         <div className="registerItem">
-          <label>Username</label>
+          <label>Name</label>
           {/* Need value prop for resetting the input fields */}
           <input
             type="text"
             placeholder="john123"
             required
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className="registerItem">
@@ -66,7 +68,7 @@ const Register = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </div> 
+        </div>
         <div className="registerItem">
           <label>Password</label>
           <input
