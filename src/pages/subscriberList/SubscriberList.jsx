@@ -8,7 +8,12 @@ import jwt_decode from "jwt-decode";
 
 //info required to make requests to backend
 const token = localStorage.getItem("token");
-const decodedToken = jwt_decode(token);
+let decodedToken = "";
+try {
+  decodedToken = jwt_decode(token);
+} catch (error) {
+  console.log(error);
+}
 const usersId = decodedToken.id;
 const config = {
   headers: { Authorization: `Bearer ${token}` },

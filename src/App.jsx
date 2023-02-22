@@ -30,7 +30,7 @@ const App = () => {
             <Route path="/subscribers" element={<SubscriberList />} />
             <Route path="/subscribers/:subscriberId" element={<Subscriber />} />
             <Route path="/newSubscriber" element={<NewSubscriber />} />
-            <Route path="/subscriptions" element={<SubscriptionList />} />
+            {/* <Route path="/subscriptions" element={<SubscriptionList />} /> */}
             <Route path="/newSubscription" element={<NewSubscription />} />
             {/* <Route
               path="/subscriptions/:subscriptionId"

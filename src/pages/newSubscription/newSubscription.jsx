@@ -10,7 +10,13 @@ const NewSubscription = () => {
   const [cost, setCost] = useState("");
   //retrieving andd decoding token to get usersID for authorization and name for display
   const token = localStorage.getItem("token");
-  const decodedToken = jwt_decode(token);
+
+  let decodedToken = "";
+  try {
+    decodedToken = jwt_decode(token);
+  } catch (error) {
+    console.log(error);
+  }
   const usersId = decodedToken.id;
   const name = decodedToken.name;
 
