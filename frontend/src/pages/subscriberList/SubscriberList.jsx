@@ -100,7 +100,13 @@ const SubscriberList = () => {
         return (
           <>
             {/* relative path to individual subscriber */}
-            <Link to={`${params.row.id}`}>
+            {/* to={`${params.row.id}`} */}
+            <Link
+              to={{
+                pathname: `/subscribers/${params.row.id}`,
+                state: { id: params.row.id },
+              }}
+            >
               <button className="subscriberListTableEdit">Edit</button>
             </Link>
             {/* AXIOS DELETE REQUEST HERE*/}

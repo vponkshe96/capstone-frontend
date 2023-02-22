@@ -1,8 +1,9 @@
 import "./logIn.css";
 import { useState } from "react";
-import { Login } from "@mui/icons-material";
+import { Login, Home } from "@mui/icons-material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
@@ -63,12 +64,18 @@ const LogIn = () => {
         {error && (
           //ADD CSS TO HANDLE THIS
           <div className="errorContainer">
-            <p className="formError">{error}</p>
+            <p className="formError">{error.toUpperCase()}</p>
           </div>
         )}
         <button className="logInButton">
           <Login className="logInIcon" />
           Login
+        </button>
+        <button className="homeButton">
+          <Link className="link" to="/">
+            <Home className="homeIcon" />
+            Home
+          </Link>
         </button>
       </form>
     </div>

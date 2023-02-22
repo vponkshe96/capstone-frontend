@@ -1,12 +1,16 @@
-//Send PUT REQUEST to subscribers model
 import "./subscriber.css";
 import { useState, useEffect } from "react";
 import { Edit } from "@mui/icons-material";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import Sidebar from "../../components/sidebar/Sidebar";
+import { useParams } from "react-router-dom";
 
 const Subscriber = () => {
+  //useParams hook to get id from URL
+  const { subscriberId } = useParams();
+  const id = subscriberId;
+
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
@@ -50,7 +54,11 @@ const Subscriber = () => {
     };
     console.log(subscriber);
 
-    const response = await axios.put("", subscriber);
+    const response = await axios.put(
+      `http://localhost:8080/subscribers/editSubscriber/${id}`,
+      subscriber,
+      config
+    );
     if (response.status === 200) {
       alert("Subscriber has been successfully edited!");
     }

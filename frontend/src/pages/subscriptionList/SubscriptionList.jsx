@@ -38,6 +38,7 @@ const SubscriptionList = () => {
         config
       );
       const result = response.data.allTypes;
+      console.log(result);
       setSubscriptionRows(result);
     };
     fetchSubscriptions();
@@ -76,11 +77,11 @@ const SubscriptionList = () => {
       headerName: "Cost",
       flex: 1,
     },
-    {
-      field: "usersId",
-      headerName: "Subscribers",
-      flex: 1,
-    },
+    // {
+    //   field: "usersId",
+    //   headerName: "Subscribers",
+    //   flex: 1,
+    // },
     {
       field: "action",
       headerName: "Action",
