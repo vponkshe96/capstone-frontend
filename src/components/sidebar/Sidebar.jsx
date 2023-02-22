@@ -26,7 +26,7 @@ const Sidebar = () => {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Subscribers</h3>
           <ul className="sidebarList">
-            <Link className="link" to="newSubscriber">
+            <Link className="link" to="/newSubscriber">
               <li className="sidebarListItem">
                 <AddCircleOutlineOutlined className="sidebarIcon" />
                 Create

@@ -3,6 +3,7 @@ import { Add } from "@mui/icons-material";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
+import Sidebar from "../../components/sidebar/Sidebar";
 
 const NewSubscriber = () => {
   const [fullName, setFullName] = useState("");
@@ -62,60 +63,63 @@ const NewSubscriber = () => {
   };
 
   return (
-    <div className="newSubscriber">
-      <h1 className="newSubscriberTitle">New Subscriber</h1>
-      <form className="newSubscriberForm" onSubmit={handleSubmit}>
-        <div className="newSubscriberItem">
-          <label>Full Name</label>
-          {/* Need value prop for resetting the input fields */}
-          <input
-            type="text"
-            placeholder="John Smith"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-            required
-          />
-        </div>
-        <div className="newSubscriberItem">
-          <label>Email</label>
-          <input
-            type="email"
-            placeholder="johnsmith@gmail.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="newSubscriberItem">
-          <label>Date</label>
-          <input
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            required
-          />
-        </div>
-        <div className="newSubscriberItem">
-          <label>Subscription Type</label>
-          <select
-            className="newSubscriberSelect"
-            required
-            onChange={(e) => setTypesId(e.target.value)}
-          >
-            <option value="default">Choose Here</option>
-            {subscriptionType.map((type) => (
-              <option key={type.id} value={type.id}>
-                {type.type}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button className="newSubscriberButton">
-          <Add className="newSubscriberIcon" />
-          Create
-        </button>
-      </form>
-    </div>
+    <>
+      <Sidebar />
+      <div className="newSubscriber">
+        <h1 className="newSubscriberTitle">New Subscriber</h1>
+        <form className="newSubscriberForm" onSubmit={handleSubmit}>
+          <div className="newSubscriberItem">
+            <label>Full Name</label>
+            {/* Need value prop for resetting the input fields */}
+            <input
+              type="text"
+              placeholder="John Smith"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="newSubscriberItem">
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="johnsmith@gmail.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="newSubscriberItem">
+            <label>Date</label>
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              required
+            />
+          </div>
+          <div className="newSubscriberItem">
+            <label>Subscription Type</label>
+            <select
+              className="newSubscriberSelect"
+              required
+              onChange={(e) => setTypesId(e.target.value)}
+            >
+              <option value="default">Choose Here</option>
+              {subscriptionType.map((type) => (
+                <option key={type.id} value={type.id}>
+                  {type.type}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button className="newSubscriberButton">
+            <Add className="newSubscriberIcon" />
+            Create
+          </button>
+        </form>
+      </div>
+    </>
   );
 };
 export default NewSubscriber;

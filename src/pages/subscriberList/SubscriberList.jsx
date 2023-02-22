@@ -5,6 +5,7 @@ import { DeleteOutline } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
+import Sidebar from "../../components/sidebar/Sidebar";
 
 //info required to make requests to backend
 const token = localStorage.getItem("token");
@@ -113,23 +114,26 @@ const SubscriberList = () => {
   ];
 
   return (
-    <div className="subscriberList">
-      <h3 className="subscriberListTitle">Your Subscribers</h3>
-      <DataGrid
-        className="subscriberListTable"
-        //height will adjust to its content
-        autoHeight
-        rows={subscriberRows}
-        columns={subscriberColumns}
-        pageSize={10}
-        //need it to set page size
-        rowsPerPageOptions={[10]}
-        checkoxSelection
-        //to prevent entire row from being selected when edit/delete button is clicked
-        disableSelectionOnClick
-        //can also consider making certain columns editable
-      />
-    </div>
+    <>
+      <Sidebar />
+      <div className="subscriberList">
+        <h3 className="subscriberListTitle">Your Subscribers</h3>
+        <DataGrid
+          className="subscriberListTable"
+          //height will adjust to its content
+          autoHeight
+          rows={subscriberRows}
+          columns={subscriberColumns}
+          pageSize={10}
+          //need it to set page size
+          rowsPerPageOptions={[10]}
+          checkoxSelection
+          //to prevent entire row from being selected when edit/delete button is clicked
+          disableSelectionOnClick
+          //can also consider making certain columns editable
+        />
+      </div>
+    </>
   );
 };
 export default SubscriberList;
