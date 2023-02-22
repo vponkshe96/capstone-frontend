@@ -67,7 +67,7 @@ const Sidebar = () => {
           </ul>
         </div>
         <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Analytics</h3>
+          <h3 className="sidebarTitle">User Action</h3>
           <ul className="sidebarList">
             <Link
               className="link"

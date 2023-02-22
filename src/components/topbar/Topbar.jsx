@@ -21,7 +21,7 @@ const Topbar = () => {
           {/* <span className="text">Welcome Guest</span> */}
         </div>
         <div className="topRight">
-          <Link className="link" to="/">
+          {/* <Link className="link" to="/">
             Home
           </Link>
           <Link className="link" to="/register">
@@ -29,7 +29,7 @@ const Topbar = () => {
           </Link>
           <Link className="link" to="/login">
             Login
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

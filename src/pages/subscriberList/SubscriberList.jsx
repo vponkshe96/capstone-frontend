@@ -114,7 +114,7 @@ const SubscriberList = () => {
 
   return (
     <div className="subscriberList">
-      <h3 className="subscriberListTitle">Subscribers</h3>
+      <h3 className="subscriberListTitle">Your Subscribers</h3>
       <DataGrid
         className="subscriberListTable"
         //height will adjust to its content
