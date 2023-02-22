@@ -1,4 +1,3 @@
-// Objective: Send POST REQUEST to types model
 import "./newSubscription.css";
 import { Add } from "@mui/icons-material";
 import { useState } from "react";
@@ -9,24 +8,24 @@ const NewSubscription = () => {
   const [type, setType] = useState("");
   const [price, setPrice] = useState("");
   const [cost, setCost] = useState("");
+  //retrieving andd decoding token to get usersID for authorization and name for display
   const token = localStorage.getItem("token");
   const decodedToken = jwt_decode(token);
   const usersId = decodedToken.id;
   const name = decodedToken.name;
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //shorthand object notation
     const subscription = {
       type,
       price,
       cost,
       usersId,
     };
-    //POST REQUES
-    const config = {
-      headers: { Authorization: `Bearer ${token}` },
-    };
+    //POST REQUEST
     const response = await axios.post(
       `http://localhost:8080/users/createType`,
       subscription,
@@ -37,7 +36,6 @@ const NewSubscription = () => {
       alert("New subscription has been successfully added!");
     }
 
-    //RESETTING FORM after submission
     setType("");
     setPrice("");
     setCost("");
@@ -51,7 +49,6 @@ const NewSubscription = () => {
       <form className="newSubscriptionForm" onSubmit={handleSubmit}>
         <div className="newSubscriptionItem">
           <label>Subscription Name</label>
-          {/* Need value prop for resetting the input fields */}
           <input
             type="text"
             placeholder="Basic"

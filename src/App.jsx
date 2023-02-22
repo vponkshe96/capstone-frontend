@@ -8,7 +8,7 @@ import NewSubscriber from "./pages/newSubscriber/NewSubscriber";
 import Subscriber from "./pages/subscriber/Subscriber";
 import SubscriberList from "./pages/subscriberList/SubscriberList";
 import SubscriptionList from "./pages/subscriptionList/SubscriptionList";
-import NewSubscription from "./pages/newSubscription/newSubscription";
+import NewSubscription from "./pages/newSubscription/NewSubscription";
 import LogIn from "./pages/login/LogIn";
 import Register from "./pages/register/Register";
 const App = () => {

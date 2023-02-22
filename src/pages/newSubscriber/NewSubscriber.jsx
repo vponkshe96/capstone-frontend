@@ -1,53 +1,60 @@
-// Objective:
-//Send GET REQUEST to types model
-//Send POST REQUEST to subscribers model
 import "./newSubscriber.css";
 import { Add } from "@mui/icons-material";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import jwt_decode from "jwt-decode";
 
 const NewSubscriber = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
-  const [subscriptionType, setSubscriptionType] = useState("");
+  const [typesId, setTypesId] = useState(null);
+  //array of subscription types obtained from get req to types model
+  const [subscriptionType, setSubscriptionType] = useState([]);
+  const token = localStorage.getItem("token");
+  const decodedToken = jwt_decode(token);
+  const usersId = decodedToken.id;
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
 
   //GET REQUEST to types model
   useEffect(() => {
     const fetchTypes = async () => {
-      const response = await axios.get("");
-      //receive in json format coz that's the format the backend sends us the data, array of objects
-      const { data } = response;
-      setSubscriptionType(response);
+      const response = await axios.get(
+        `http://localhost:8080/users/allTypes/${usersId}`,
+        config
+      );
+      const types = response.data.allTypes;
+      console.log(types);
+      setSubscriptionType(types);
     };
     fetchTypes();
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //shorthand object notation
     const subscriber = {
       fullName,
       date,
       email,
-      subscriptionType,
+      typesId,
+      usersId,
     };
     console.log(subscriber);
-    //Sending post request to backend express server, receive and store response
-
-    const response = await axios.post("", subscriber);
+    //POST request to subscribers model
+    const response = await axios.post(
+      "http://localhost:8080/subscribers/addSubscriber",
+      subscriber
+    );
 
     if (response.status === 200) {
       alert("New subscriber has been successfully added!");
-      //prevent page refresh
-      //NOT EXACTLY sure, something related to not having to refresh page to view latest data
-      window.location.reload(false);
     }
-    //RESETTING FORM after submission
     setFullName("");
     setEmail("");
     setDate("");
-    setSubscriptionType("");
+    setTypesId("");
   };
 
   return (
@@ -62,15 +69,17 @@ const NewSubscriber = () => {
             placeholder="John Smith"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
+            required
           />
         </div>
         <div className="newSubscriberItem">
           <label>Email</label>
           <input
-            type="text"
+            type="email"
             placeholder="johnsmith@gmail.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
         <div className="newSubscriberItem">
@@ -79,21 +88,22 @@ const NewSubscriber = () => {
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
+            required
           />
         </div>
         <div className="newSubscriberItem">
-          {/* Deleted htmlFor att in label and id in select Felt it was redundant*/}
           <label>Subscription Type</label>
           <select
             className="newSubscriberSelect"
-            value={subscriptionType}
-            onChange={(e) => setSubscriptionType(e.target.value)}
+            required
+            onChange={(e) => setTypesId(e.target.value)}
           >
-            <option value="" selected disabled hidden>
-              Choose here
-            </option>
-            <option>1-Time</option>
-            <option>Lifetime</option>
+            <option value="default">Choose Here</option>
+            {subscriptionType.map((type) => (
+              <option key={type.id} value={type.id}>
+                {type.type}
+              </option>
+            ))}
           </select>
         </div>
         <button className="newSubscriberButton">
