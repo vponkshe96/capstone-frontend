@@ -50,7 +50,8 @@ const SubscriberList = () => {
   const handleDelete = async (id) => {
     //id goes here
     const response = await axios.delete(
-      `http://localhost:8080/subscribers/deleteSubscriber/${id}`
+      `http://localhost:8080/subscribers/deleteSubscriber/${id}`,
+      config
     );
     if (response.status === 200) {
       //updates data grid without refreshing the page
