@@ -9,13 +9,13 @@ const NewSubscription = () => {
   const [type, setType] = useState("");
   const [price, setPrice] = useState("");
   const [cost, setCost] = useState("");
+  const token = localStorage.getItem("token");
+  const decodedToken = jwt_decode(token);
+  const usersId = decodedToken.id;
+  const name = decodedToken.name;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem("token");
-    const decodedToken = jwt_decode(token);
-    console.log(decodedToken);
-    const usersId = decodedToken.id;
     //shorthand object notation
     const subscription = {
       type,
@@ -23,9 +23,7 @@ const NewSubscription = () => {
       cost,
       usersId,
     };
-    console.log(subscription);
-    //POST REQUEST HERE, receive and store response
-
+    //POST REQUES
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
@@ -47,7 +45,9 @@ const NewSubscription = () => {
 
   return (
     <div className="newSubscription">
-      <h1 className="newSubscriptionTitle">Create a New Subscription</h1>
+      <h1 className="newSubscriptionTitle">
+        Welcome {name}! Create a new subscription to get started
+      </h1>
       <form className="newSubscriptionForm" onSubmit={handleSubmit}>
         <div className="newSubscriptionItem">
           <label>Subscription Name</label>
