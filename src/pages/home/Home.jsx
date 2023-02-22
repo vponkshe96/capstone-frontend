@@ -6,7 +6,7 @@ const Home = () => {
     <div className="home">
       <div className="homeContainer">
         <h1 className="title">
-          Welcome to Dashboard, select register or login to get started
+          Hello User Welcome to DigiTracker, select register or login to get started
         </h1>
         <Link className="link" to="/register">
           <button className="registerButton">
