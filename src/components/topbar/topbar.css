@@ -18,12 +18,27 @@
 
 .logo {
   font-size: 25px;
-  font-weight: bold;
-  color: darkblue;
+  font-weight: 600;
+  color: purple;
   cursor: pointer;
+}
+
+.topBarIconLeft {
+  margin-right: 5px;
+}
+.topBarIconRight {
+  margin-left: 5px;
+}
+
+.text {
+  color: purple;
+  font-size: 20px;
+  margin-left: 120px;
 }
 .topLeft {
   flex: 10;
+  display: flex;
+  align-items: center;
 }
 
 .topRight {
@@ -32,6 +47,6 @@
   justify-content: space-between;
 }
 
-.icon {
-  margin-right: 10px;
+.link:hover {
+  background-color: rgb(240, 240, 255);
 }

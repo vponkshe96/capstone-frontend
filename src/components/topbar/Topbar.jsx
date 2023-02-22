@@ -1,12 +1,24 @@
 import "./topbar.css";
 import { Link } from "react-router-dom";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 
 const Topbar = () => {
   return (
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
-          <span className="logo">Dashboard</span>
+          <AttachMoneyIcon
+            className="topBarIconLeft"
+            color="secondary"
+            fontSize="medium"
+          />
+          <span className="logo">DigiTracker</span>
+          <AttachMoneyIcon
+            className="topBarIconRight"
+            color="secondary"
+            fontSize="medium"
+          />
+          {/* <span className="text">Welcome Guest</span> */}
         </div>
         <div className="topRight">
           <Link className="link" to="/">
