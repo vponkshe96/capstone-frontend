@@ -38,6 +38,7 @@ const SubscriptionList = () => {
         config
       );
       const result = response.data.allTypes;
+
       console.log(result);
       setSubscriptionRows(result);
     };
