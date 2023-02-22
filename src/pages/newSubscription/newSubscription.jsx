@@ -13,9 +13,6 @@ const NewSubscription = () => {
   const decodedToken = jwt_decode(token);
   const usersId = decodedToken.id;
   const name = decodedToken.name;
-  const config = {
-    headers: { Authorization: `Bearer ${token}` },
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,6 +23,9 @@ const NewSubscription = () => {
       usersId,
     };
     //POST REQUEST
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
     const response = await axios.post(
       `http://localhost:8080/users/createType`,
       subscription,

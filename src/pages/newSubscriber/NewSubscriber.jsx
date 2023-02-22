@@ -26,7 +26,6 @@ const NewSubscriber = () => {
         config
       );
       const types = response.data.allTypes;
-      console.log(types);
       setSubscriptionType(types);
     };
     fetchTypes();

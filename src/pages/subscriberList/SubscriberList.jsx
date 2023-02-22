@@ -1,33 +1,55 @@
-// Objective
-// GET REQUEST to subscribers model
-//DELETE REQUEST to subscribers model
-
 import "./subscriberList.css";
 import { useState, useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { DeleteOutline } from "@mui/icons-material";
-import { subscriberRows } from "../../data";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import jwt_decode from "jwt-decode";
+
+//info required to make requests to backend
+const token = localStorage.getItem("token");
+const decodedToken = jwt_decode(token);
+const usersId = decodedToken.id;
+const config = {
+  headers: { Authorization: `Bearer ${token}` },
+};
 
 const SubscriberList = () => {
-  // const [subscriberRows, setSubscriberRows] = useState(null);
+  //DataGrid needs an initial row value
+  const [subscriberRows, setSubscriberRows] = useState([
+    {
+      id: 0,
+      fullName: "test",
+      email: "test",
+      date: "test",
+      subscriptionType: "test",
+    },
+  ]);
 
   // GET REQUEST to subscribers model
-  // useEffect(() => {
-  //   const fetchMeetings = async () => {
-  //     const response = await axios.get("http://localhost:4444/api/meetings");
-  //     const { data } = response;
-  //     setSubscriberRows(data);
-  //   };
-  //   //send request everytime there's a change to subscriberRows state
-  //   fetchMeetings();
-  // }, [subscriberRows]);
+  useEffect(() => {
+    const fetchSubscribers = async () => {
+      const response = await axios.get(
+        `http://localhost:8080/subscribers/allSubscriber/${usersId}`,
+        config
+      );
+      const result = response.data.allSubscribers;
+      setSubscriberRows(result);
+    };
+    //send request everytime there's a change to subscriberRows state
+    fetchSubscribers();
+  }, []);
 
   //DELETE REQUEST to subscribers model
   const handleDelete = async (id) => {
     //id goes here
-    const response = await axios.delete(``);
+    const response = await axios.delete(
+      `http://localhost:8080/subscribers/deleteSubscriber/${id}`
+    );
+    if (response.status === 200) {
+      //updates data grid without refreshing the page
+      window.location.reload(false);
+    }
   };
 
   const subscriberColumns = [
@@ -54,9 +76,12 @@ const SubscriberList = () => {
       field: "date",
       headerName: "Date",
       flex: 1,
+      //converting date provided by backend into the right format
+      type: "date",
+      valueGetter: ({ value }) => value && new Date(value),
     },
     {
-      field: "subscriptionType",
+      field: "typesId",
       headerName: "Subscription Type",
       flex: 1,
     },
