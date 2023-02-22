@@ -3,30 +3,44 @@ import "./newSubscription.css";
 import { Add } from "@mui/icons-material";
 import { useState } from "react";
 import axios from "axios";
+import jwt_decode from "jwt-decode";
 
 const NewSubscription = () => {
-  const [name, setName] = useState("");
+  const [type, setType] = useState("");
   const [price, setPrice] = useState("");
   const [cost, setCost] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem("token");
+    const decodedToken = jwt_decode(token);
+    console.log(decodedToken);
+    const usersId = decodedToken.id;
     //shorthand object notation
     const subscription = {
-      name,
+      type,
       price,
       cost,
+      usersId,
     };
     console.log(subscription);
     //POST REQUEST HERE, receive and store response
-    const response = await axios.post("", subscription);
+
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+    const response = await axios.post(
+      `http://localhost:8080/users/createType`,
+      subscription,
+      config
+    );
 
     if (response.status === 200) {
       alert("New subscription has been successfully added!");
     }
 
     //RESETTING FORM after submission
-    setName("");
+    setType("");
     setPrice("");
     setCost("");
   };
@@ -41,8 +55,8 @@ const NewSubscription = () => {
           <input
             type="text"
             placeholder="Basic"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={type}
+            onChange={(e) => setType(e.target.value)}
           />
         </div>
         <div className="newSubscriptionItem">
