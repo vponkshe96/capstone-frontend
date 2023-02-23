@@ -17,6 +17,8 @@
 
 .keyInfoTitle {
   font-size: 20px;
+  font-weight: 600;
+  color: purple;
 }
 .keyInfoMoneyContainer {
   display: flex;
@@ -49,4 +51,9 @@
 .keyInfoComp {
   color: gray;
   font-size: 15px;
+}
+
+.icon {
+  margin-right: 5px;
+  font-size: 40px;
 }
